@@ -98,6 +98,7 @@ func (opts *bucketOpts) registerConvertTSDBFlags(cmd *kingpin.CmdClause) {
 	cmd.Flag("tsdb.storage.s3.access_key", "access key for s3").Default("").Envar("TSDB_STORAGE_S3_ACCESS_KEY").StringVar(&opts.s3AccessKey)
 	cmd.Flag("tsdb.storage.s3.secret_key", "secret key for s3").Default("").Envar("TSDB_STORAGE_S3_SECRET_KEY").StringVar(&opts.s3SecretKey)
 	cmd.Flag("tsdb.storage.s3.insecure", "use http").Default("false").BoolVar(&opts.s3Insecure)
+	cmd.Flag("storage.s3.aws-sdk-auth", "use AWS SDK authentication").Default("false").BoolVar(&opts.AWSSDKAuth)
 }
 
 func (opts *discoveryOpts) registerConvertParquetFlags(cmd *kingpin.CmdClause) {
